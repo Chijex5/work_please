@@ -1,0 +1,140 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.group {
+  margin-bottom: 10px;
+}
+
+.group label {
+  font-weight: bold;
+}
+
+.group input,
+.group select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.group input.error,
+.group select.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signup-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.prev-step {
+  background-color: #007bff;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.next-step {
+  background-color: #28a745;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.next-step:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.prev-step:hover {
+  background-color: #065cb8;
+}
+
+.next-step:hover:enabled {
+  background-color: #218838;
+}
+
+.message-box {
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message-box.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.message-box.error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 10px;
+  background-color: #4caf50;
+}
+
+.select-wrapper {
+  margin-bottom: 10px;
+}
+
+#level {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#register {
+  width: 100%;
+}

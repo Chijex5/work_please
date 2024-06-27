@@ -1,0 +1,183 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Profile section styling */
+.profile-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto; /* Add margin-top for spacing */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  margin-top: 20px; /* Add margin-top to move the text down */
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.profile-form input,
+.profile-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.profile-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.profile-form input:disabled,
+.profile-form textarea:disabled {
+  background-color: #e9ecef;
+}
+
+.edit-button,
+.save-button {
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.edit-button {
+  background-color: #28a745;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.save-button {
+  background-color: #28a745;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.sign-out {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.sign-out h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.logout-button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+/* Staff-specific styles */
+.staff-ui {
+  background-color: #fff; /* Light blue background for staff UI */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.staff-ui .edit-button,
+.staff-ui .save-button,
+.staff-ui .logout-button {
+  background-color: #28a745; /* Blue buttons for staff UI */
+}
+
+.staff-ui .edit-button:hover {
+  background-color: #218838; /* Darker blue on hover for staff UI */
+}
+
+.staff-ui .save-button:hover {
+  background-color: #218838; /* Darker green on hover for staff UI */
+}
+
+/* Non-staff-specific styles */
+.non-staff-ui .edit-button{
+  background-color: #28a745;
+}
+.non-staff-ui .edit-button:hover{
+  background-color: #218838;
+}
+
+/* Add this to your Profile.css */
+
+/* Styling for the badge */
+.badge {
+  display: block;
+  margin: 20px auto; /* Center the badge */
+  padding: 10px 20px;
+  font-size: 1.2em; /* Increase font size */
+  font-weight: bold;
+  color: #fff; /* Text color */
+  background-color: #28a745; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  text-align: center;
+  animation: pulse 2s infinite; /* Add a pulsing effect */
+  font-family: 'Times New Roman', Times, serif; /* Use a beautiful font */
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Different background color for staff */
+.staff-badge {
+  background-color: #4CAF50; /* Green background for staff */
+}
+
+.non-staff-badge {
+  background-color: #f44336; /* Red background for non-staff */
+}

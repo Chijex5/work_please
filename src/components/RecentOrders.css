@@ -1,0 +1,68 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+.orders-section {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 600px; /* Set a maximum width */
+    margin: 20px auto; /* Center align with margin auto */
+  }
+  
+  /* Styling the header */
+  .orders-section h2 {
+    text-align: center;
+    color: #343a40; /* Darker text color */
+    margin-bottom: 20px;
+  }
+  
+  /* List of recent orders */
+  #recentOrders {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Individual order items */
+  #recentOrders .order-item {
+    padding: 15px;
+    background-color: #ffffff; /* White background for each item */
+    border: 1px solid #dee2e6; /* Light border color */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Space out the content */
+    align-items: center; /* Center align vertically */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  /* Hover effect for order items */
+  #recentOrders .order-item:hover {
+    background-color: #e9ecef; /* Light grey background on hover */
+  }
+  
+  /* Additional styling for order details */
+  #recentOrders .order-item span {
+    color: #6c757d; /* Secondary text color */
+    font-weight: 500;
+  }
+  
+  /* Status specific styling */
+  #recentOrders .order-item .delivered {
+    color: green;
+  }
+  
+  #recentOrders .order-item .processing {
+    color: red;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    #recentOrders .order-item {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.9em;
+    }
+  }
+  

@@ -1,0 +1,148 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Navigation Menu styles */
+  .navigation-header {
+    position: fixed;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #388E3C;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navigation-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #388E3C; /* Dark background */
+    padding: 10px 20px;
+    z-index: 1000; /* Ensure it stays on top of other content */
+  }
+  
+  .navigation-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navigation-menu ul li {
+    margin: 0 10px;
+  }
+  
+  .navigation-menu ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-style: italic;
+    position: relative; /* Add position relative for absolute positioning of pseudo-elements */
+    padding: 10px 20px; /* Add some padding for better touch target size */
+  }
+  
+  .navigation-menu ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add custom styles for hover effects */
+  .navigation-menu ul li a::before {
+    content: ''; /* Add pseudo-element for hover effect */
+    position: absolute;
+    bottom: -2px; /* Position the line at the bottom of the link */
+    left: 0;
+    width: 100%; /* Set the width of the line to match the width of the link */
+    height: 2px; /* Set the height of the line */
+    background-color: #fff; /* White color for the line */
+    transform: scaleX(0); /* Initially scale the line to 0 width */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  .navigation-menu ul li a:hover::before {
+    transform: scaleX(1); /* Scale the line to full width on hover */
+  }
+  
+  /* Add styles for the active link */
+  .navigation-menu ul li a.active {
+    font-style: none;
+    font-weight: bold;
+  }
+  
+  /* Hamburger menu for mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  .hamburger .line.active:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger .line.active:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger .line.active:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Responsive Design for Navigation Menu */
+  @media only screen and (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .navigation-menu ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: #388E3C; /* Dark background */
+      transform: translateX(100%);
+      transition: transform 0.4s ease-in-out;
+    }
+  
+    .navigation-menu ul.active {
+      transform: translateX(0);
+    }
+  
+    .navigation-menu ul li {
+      margin: 20px 0;
+    }
+  
+    .navigation-menu ul li a {
+      color: white; /* Green text color for mobile view */
+      font-size: 18px;
+    }
+  
+    .navigation-menu ul li a:hover::before {
+      transform: none;
+    }
+  
+    .navigation-menu ul li a:hover {
+      text-decoration: none;
+    }
+  }
+  
