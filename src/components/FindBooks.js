@@ -3,8 +3,7 @@ import axios from 'axios';
 import { useLoader } from '../LoaderContext';
 import './findbooks.css'; // Ensure you have findbooks.css for styles
 import NotifyMeButton from './NotifyMeButton'; // Adjust path as per your project structure
-
-const BASE_URL = "http://192.168.41.240:5000";
+const BASE_URL = "https://mybackend-2.onrender.com";
 const FindBooks = () => {
   const { setLoading } = useLoader();
   const [searchQuery, setSearchQuery] = useState('');
