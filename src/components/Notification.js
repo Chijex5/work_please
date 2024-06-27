@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useLoader } from '../LoaderContext';
 import './Notification.css';
 
 const BASE_URL = "https://mybackend-2.onrender.com";
 
 const Notification = () => {
+  const { setLoading } = useLoader();
   const [notifications, setNotifications] = useState([]);
   const [selectedNotification, setSelectedNotification] = useState(null);
 
@@ -13,6 +15,7 @@ const Notification = () => {
   }, []);
 
   const fetchNotifications = async () => {
+    setLoading(true);
     try {
       const token = localStorage.getItem('token'); // Assume token is stored in localStorage
       const response = await axios.get(`${BASE_URL}/notifications`, {
@@ -21,10 +24,13 @@ const Notification = () => {
         }
       });
       setNotifications(response.data);
+      setLoading(false);
     } catch (error) {
+      
       console.error('Error fetching notifications:', error);
     }
   };
+  
 
   const handleNotificationClick = (notification) => {
     setSelectedNotification(notification);

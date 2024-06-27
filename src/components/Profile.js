@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useLoader } from '../LoaderContext';
 import './Profile.css';
 
 const BASE_URL = "https://mybackend-2.onrender.com";
 
 function Profile({ onLogout }) {
+  const { setLoading } = useLoader();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -21,6 +23,7 @@ function Profile({ onLogout }) {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const auth = localStorage.getItem('auth');
       const token = localStorage.getItem('token');
 
@@ -30,8 +33,9 @@ function Profile({ onLogout }) {
             headers: {
               'Authorization': `Bearer ${token}`,
             },
+            
           });
-
+          setLoading(false);
           const userData = response.data;
           setFormData({
             email: userData.email,

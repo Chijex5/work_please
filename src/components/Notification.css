@@ -105,6 +105,11 @@
   cursor: pointer;
 }
 
+#noti{
+  position: fixed;
+  left: 1000px;
+}
+
 .notification-modal-header {
   font-size: 20px;
   font-weight: bold;

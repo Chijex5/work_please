@@ -23,10 +23,10 @@ const Navigation = () => {
             <li><NavLink exact to="/" activeClassName="active" onClick={toggleMenu}>Home</NavLink></li>
             <li><NavLink to="/find-books" activeClassName="active" onClick={toggleMenu}>Find Books</NavLink></li>
             <li><NavLink to="/recent-orders" activeClassName="active" onClick={toggleMenu}>Recent Orders</NavLink></li>
-            <li><NavLink to="/profile" activeClassName="active" onClick={toggleMenu}>Profile</NavLink></li>
-            <li><NavLink to="/notification" activeClassName="active" onClick={toggleMenu}>Notification</NavLink></li>
             <li><NavLink to="/join-staff" activeClassName="active" onClick={toggleMenu}>Join Us</NavLink></li>
-          </ul>
+            <li><NavLink to="/profile" activeClassName="active" onClick={toggleMenu}>Profile</NavLink></li>
+            <li id='noti'><NavLink to="/notification" activeClassName="active" onClick={toggleMenu}>Notification</NavLink></li>
+           </ul>
         </div>
       </div>
     </div>
