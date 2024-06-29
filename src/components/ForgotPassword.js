@@ -21,7 +21,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/forgot-password", {
+      const response = await axios.post("https://mybackend-2.onrender.com/forgot-password", {
         matric_no: registrationNumber // Ensure the key matches your backend
       });
       setSuccessMessage('Password reset email sent successfully!');
