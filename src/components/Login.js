@@ -37,7 +37,7 @@ const Login = ({ onLogin }) => {
       if (error.response?.status === 401) {
         setError('Invalid username or password');
       } else {
-        setError(error.response?.data?.error || 'Login failed');
+        setError(error.response?.data?.error || 'Internal sever error');
       }
     } finally {
       setLoading(false);

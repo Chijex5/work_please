@@ -10,6 +10,7 @@ import ForgotPassword from './components/ForgotPassword';
 import Signup from './components/signup';
 import HomePage from './components/App';
 import Notification from './components/Notification';
+import ResetPassword from './components/ResetPassword'; // Import the new component
 import Cookies from 'js-cookie';
 import JoinStaffForm from './components/JoinStaffForm';
 import { LoaderProvider, useLoader } from './LoaderContext';
@@ -48,6 +49,7 @@ function AppContent() {
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/join-staff" element={<JoinStaffForm />} />
+              <Route path="/reset-password/:token" element={<ResetPassword />} /> {/* Add the new route */}
               <Route path="*" element={<Navigate to="/" />} />
             </>
           ) : (
@@ -58,7 +60,7 @@ function AppContent() {
               <Route path="/profile" element={<Profile onLogout={handleLogout} />} />
               <Route path="/notification" element={<Notification />} />
               <Route path="/join-staff" element={<JoinStaffForm />} />
-              <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/reset-password/:token" element={<ResetPassword />} /> {/* Add the new route */}
             </>
           )}
         </Routes>

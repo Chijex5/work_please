@@ -26,14 +26,28 @@ const Notification = () => {
       setNotifications(response.data);
       setLoading(false);
     } catch (error) {
-      
       console.error('Error fetching notifications:', error);
+      setLoading(false);
     }
   };
-  
 
-  const handleNotificationClick = (notification) => {
+  const handleNotificationClick = async (notification) => {
     setSelectedNotification(notification);
+
+    // Mark notification as read
+    try {
+      const token = localStorage.getItem('token');
+      await axios.patch(`${BASE_URL}/notifications/${notification.id}/read`, {}, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      // Update local state
+      setNotifications(notifications.map(n => n.id === notification.id ? { ...n, read: true } : n));
+    } catch (error) {
+      console.error('Error marking notification as read:', error);
+    }
   };
 
   const handleCloseModal = () => {
@@ -48,7 +62,7 @@ const Notification = () => {
       </div>
       <div className="notification-messages">
         {notifications.map(notification => (
-          <div key={notification.id} className="notification-message" onClick={() => handleNotificationClick(notification)}>
+          <div key={notification.id} className={`notification-message ${notification.read ? 'read' : ''}`} onClick={() => handleNotificationClick(notification)}>
             <div className="notification-avatar">
               <img src="https://i.imgur.com/jaC7DxL.jpeg" alt="Avatar" />
             </div>

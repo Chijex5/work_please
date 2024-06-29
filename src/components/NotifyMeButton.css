@@ -1,54 +1,45 @@
 .notify-me-button {
-    position: relative;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notify-me-button:hover {
+  background-color: #e68900;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #ffffff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .notification-toast {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f8f9fa; /* Light gray background */
-    border: 1px solid #dee2e6; /* Gray border */
-    border-radius: 4px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it's above other content */
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .notification-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .notification-title {
-    font-weight: bold;
-  }
-  
-  .close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    font-size: 20px;
-    color: #6c757d; /* Gray color for close button */
-  }
-  
-  .notify-me-button {
-    background-color: #ff9800; /* Green button */
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .notify-me-button:hover {
-    background-color: #e68900; /* Darker green on hover */
-  }
-  
-  .notify-button:focus {
-    outline: none;
-  }
-  
+}
+
+.notification-message {
+  margin-top: 10px;
+  color: #28a745;
+}
+
+
+.notify-me-button.disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}

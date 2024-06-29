@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useLoader } from '../LoaderContext';
 import './findbooks.css'; // Ensure you have findbooks.css for styles
 import NotifyMeButton from './NotifyMeButton'; // Adjust path as per your project structure
+
 const BASE_URL = "https://mybackend-2.onrender.com";
+
 const FindBooks = () => {
   const { setLoading } = useLoader();
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,12 +16,10 @@ const FindBooks = () => {
   const [cartVisible, setCartVisible] = useState(false);
 
   useEffect(() => {
-    // Fetch all books initially
     const fetchBooks = async () => {
       try {
         setLoading(true);
         const response = await axios.get(`${BASE_URL}/findbooks`);
-        // Map the response data to book objects with labeled fields
         const mappedBooks = response.data.map(book => ({
           id: book[0],
           code: book[1],
@@ -29,15 +29,16 @@ const FindBooks = () => {
           available: book[5],
         }));
         setBooks(mappedBooks);
+        setFilteredBooks(mappedBooks);
         setLoading(false);
-        setFilteredBooks(mappedBooks); // Set the initial filtered books to be all books
       } catch (error) {
         console.error('Error fetching books:', error);
+        setLoading(false);
       }
     };
 
     fetchBooks();
-  }, []);
+  }, [setLoading]);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -54,7 +55,7 @@ const FindBooks = () => {
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
     if (event.target.value === '') {
-      setFilteredBooks(books); // Reset to all books if search query is cleared
+      setFilteredBooks(books);
       setShowResults(false);
     }
   };
@@ -74,7 +75,6 @@ const FindBooks = () => {
 
   const handleNotifyMe = (book) => {
     console.log(`Notify me clicked for book: ${book.title}`);
-    // Additional logic can be added here if needed
   };
 
   return (
